@@ -16,8 +16,10 @@
 
 body{
     color: var(--branco);
-    background-color: var(--cor-de-fundo);
     font-family: var(--roboto);
+background: linear-gradient(-35deg, #0f172a, #1e293b, #0f766e, #1d4ed8);
+    background-size: 300% 300%;
+
 }
 
 .titulo-principal{
