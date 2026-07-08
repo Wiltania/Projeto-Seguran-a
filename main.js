@@ -2,9 +2,14 @@
 const numeroSenha = document.querySelector('.parametro-senha__texto');
 let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
-
+const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
+const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
+const numeros = '0123456789';
+const simbolos = '!@%*?';
 const botoes = document.querySelectorAll('.parametro-senha__botao');
-
+const campoSenha = document.querySelector('#campo-senha');
+const checkbox = document.querySelectorAll('.checkbox');
+const forcaSenha = document.querySelector('forca');
 //console.log(botoes)-usado apenas para teste
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
@@ -23,19 +28,7 @@ function aumentaTamanho(){
     }
     numeroSenha.textContent = tamanhoSenha;
 geraSenha();
-
 }
-const campoSenha = document.querySelector('#campo-senha');
-
-const checkbox = document.querySelectorAll('.checkbox');
-
-console.log(checkbox);
-
-const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
-const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
-const numeros = '0123456789';
-const simbolos = '!@%*?';
-geraSenha();
 
 function geraSenha(){
     function geraSenha(){
@@ -52,8 +45,6 @@ function geraSenha(){
     if (checkbox[3].checked){
         alfabeto = alfabeto + simbolos;
     }
-    console.log(alfabeto);
-
     let senha = '';
     for (let i = 0; i < tamanhoSenha;i++){
         let numeroAleatorio = Math.random()*alfabeto.length;
@@ -62,3 +53,6 @@ function geraSenha(){
     }
     campoSenha.value = senha;
 }}
+function classificaSenha(){
+    forcaSenha.classList.add('forte')
+}
